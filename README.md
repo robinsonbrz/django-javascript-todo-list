@@ -27,7 +27,7 @@
     <div align="center">
     <br>
         <a href="https://www.linkedin.com/in/robinsonbrz/">
-            <img src="Movie List.jpg" width="600" height="auto">
+            <img src="TodoApp.jpg" width="600" height="auto">
             <h3 align="left">
                 🚧 Projeto 🚀 concluído 🚧
             </h3>
@@ -190,5 +190,5 @@ python manage.py runserver
         </table>
     </div>
     <br>
-    Django-web-scrap
+    DjangoToDoApp
 </div>
