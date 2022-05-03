@@ -1,0 +1,40 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark text-dark bg-primary pc-4">
+  <a class="navbar-brand logo_h" href="https://www.enedino.com.br"><img src="{% static 'todoapp/img/brand.png'%}"  alt=""></a>
+  <a class="navbar-brand logo_h" href="https://www.enedino.com.br"><img src="{% static 'todoapp/img/faviconEnedino.svg'%}" style="width:40px" alt=""></a>
+
+
+  
+  <a class="navbar-brand pl-4" href="{% url 'todoapp:login' %}">Lista de Tarefas - Todo List</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+
+  
+  
+  <div class="collapse navbar-collapse " id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      
+      <li class="nav-item"><a class="nav-link text-dark" href="#">Portfolio Robinson</a></li>
+      {% if not user.is_authenticated %}
+      <li class="nav-item active">
+        <a class="nav-link text-dark" href="{% url 'todoapp:register' %}">Registro   </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="{% url 'todoapp:login' %}">Login</a>
+      </li>
+      {% endif %}
+      {% if  user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="{% url 'todoapp:logout' %}">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled  text-dark" > <strong>{{ user.username }}</strong></a>
+      </li>
+      {% endif %}
+      </ul>
+  </div>
+</nav>

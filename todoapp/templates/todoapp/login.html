@@ -1,0 +1,54 @@
+{% extends 'todoapp/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Login</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Login">
+    </form>
+    <div class="text-center">
+        <br>
+        <p>Ainda não tem uma conta? <a href="{% url 'todoapp:register' %}">Registre-se</a> <br>E salve suas próprias notas.</p>
+        <br><br>
+        <h3>Não quer criar um usuário?</h3>
+        <p>
+            Teste as funcionalidades com o usuário teste.
+        </p>
+        <a href="#" id="teste_btn">
+            Clique aqui e logue automaticamente como usuario Teste
+        </a>
+    </div>
+</div>
+<br>
+
+
+    
+<script>
+    $(function () {
+        // alert("carregado");
+        $('#id_username').attr('autocomplete', 'off');
+
+        //$("#teste_btn").event.preventDefault();
+        $("#teste_btn").on('click', function () {
+            console.log("teste");
+
+            $("#id_username").val("testuser2");
+            $("#id_password").val("t3stU5er@");
+            $( ".button" ).trigger('click');
+        })
+
+
+
+
+    })
+</script>
+
+
+
+
+{% endblock content %}
